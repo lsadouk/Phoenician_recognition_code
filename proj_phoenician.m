@@ -13,7 +13,7 @@ opts.gpus = [1] ; % set to [] for cpu mode and to [1] for gpu mode
 %% ---------------------------------------------------------------------
 %                                                            INPUTS
 % ---------------------------------------------------------------------
-dataset =input('Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(TifinaghData_or)/(LatinData)/(ArabicData66)/(ArabicData24)/(RussianData)/(DevanagariData)/(BengaliData)/(DigitsData)/(CifarData)','s'); %dataset = 'PhoenicianData';
+dataset =input('Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData)','s'); %dataset = 'PhoenicianData';
 all_limited_target_data = input('Please select among the following: (0) full target dataset / (1)limited target dataset '); % limited= 55 instances/char
 training_type =input('Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning ');
 freeze_all_but_last= false; 
@@ -46,7 +46,7 @@ if training_type ==1 % randomly initialized CNN
     if all_limited_target_data==1, opts.numEpochs =  30; else, opts.numEpochs =  70; end % was 30 for phoenician and 70 for the rest
 else % TL
     opts.expDir = fullfile('data_results',strcat('data_TL_from_',pretrained_net,'_to_',dataset,'_freeze',int2str(int8(freeze_all_but_last)), ...
-                            '_',int2str(image_size), '-',int2str(image_size),'__limitedData99', int2str(all_limited_target_data)) );
+                            '_',int2str(image_size), '-',int2str(image_size),'__limitedData', int2str(all_limited_target_data)) );
     net = cnn_init_transferLearning(num_categories,pretrained_net, freeze_all_but_last, image_size);
     opts.numEpochs =  35; % was 35 and changed to 50 for TL from Ph to Arabic
 end
