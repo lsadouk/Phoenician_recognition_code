@@ -30,6 +30,34 @@ For further information about how to compile the toolbox, please refer to the fo
 In our article, we aim at:
 1. presenting a deep 
 
+
+
+I. TRAINING a ConvNet on Phoenician Data (section 3 of article) to obtain the "Phoenician ConvNet"
+Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData)PhoenicianData
+Please select among the following: (0) full target dataset / (1)limited target dataset 0
+Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning 1
+
+Lowest validation error is XX at epoch XX
+
+II. Finetuning the whole "Phoenician ConvNet" (all weights of the convnet) using the Tifinagh dataset  (section 4 of article)
+Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData)TifinaghData
+Please select among the following: (0) full target dataset / (1)limited target dataset 0
+Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning 2
+Please choose among pre-trained CNN model/net: (Phoenician) / (Latin)/(Arabic66)/(Arabic24)/(Russian)/(Devanagari)/(Bengali)/(ImageVGG)/(Digits)/(Cifar)Phoenician
+Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) 0
+
+III. Fine-tuning only last layer weights of the "Phoenician ConvNet" using a target dataset with limited training data (section 5 of article) to obtain the "TL ConvNet using Phoenician"
+
+Example of target dataset: Arabic24
+number of training data: 99
+
+Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData)ArabicData24
+Please select among the following: (0) full target dataset / (1)limited target dataset 1
+Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning 2
+Please choose among pre-trained CNN model/net: (Phoenician) / (Latin)/(Arabic66)/(Arabic24)/(Russian)/(Devanagari)/(Bengali)/(ImageVGG)/(Digits)/(Cifar)Phoenician
+Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) 1
+
+
 1. You can train and test the neural network by running the file 'proj_regression.m' (<b>see examples below </b>):
 
 - using either the standard (baseline) algorithm (e.g., the standard loss function) or the cost-sensitive learning algorithm (e.g., the cost-sensitive version of the loss function) applied on ones of the following loss functions:  <b>L<sub>2</sub></b>, <b>L<sub>2</sub> &#959; &#963;</b>, <b>Mshinge</b>, <b>Mshinge<sub>2</sub></b>, <b>Mshinge<sub>3</sub></b>, <b>log &#959; &#963;</b>.
