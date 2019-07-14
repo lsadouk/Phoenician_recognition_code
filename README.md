@@ -16,7 +16,7 @@ This readme is a brief overview and contains details for setting up and running 
 2. To run this project, the MatConvNet Toolbox 1.0-beta25 needs to be installed (and saved into the main directory) and compiled. You can dowload the Toolbox by clicking on this link: http://www.vlfeat.org/matconvnet/download/matconvnet-1.0-beta25.tar.gz
 For further information about how to compile the toolbox, please refer to the following url: http://www.vlfeat.org/matconvnet/install/
 3. The alphabet datasets have already been preprocessed and can be downloaded from the following links:
-- Tifinagh Handwritten dataset: https://drive.google.com/file/d/10XEAL6b6KpoyDBE7g3RHLrPdzqcnBuCz/view?usp=sharing
+- Tifinagh Handwritten dataset: https://drive.google.com/file/d/1p-vCAztwFPRKBA_C3emvHIPvOF3zzbu8/view?usp=sharing
 - Phoenician Handwritten dataset: https://osf.io/4j9b6/
 - Russian Handwritten dataset: https://drive.google.com/open?id=11snRx-wBHcvB2033IVYdG9njY5MIGMJJ
 - Latin Handwritten dataset:  https://drive.google.com/file/d/1z27RIxP-yCSyeAAKRqd12M7gpnS8r2cq/view?usp=sharing
