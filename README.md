@@ -22,6 +22,8 @@ For further information about how to compile the toolbox, please refer to the fo
 - Latin Handwritten dataset:  https://drive.google.com/file/d/1z27RIxP-yCSyeAAKRqd12M7gpnS8r2cq/view?usp=sharing
 - Bengali Handwritten dataset: https://drive.google.com/file/d/1msBOYcCbNkST4jIuT6TudgEV39iESpJR/view?usp=sharing
 - Arabic Handwritten dataset: (need to ask permission of authors of AMHCD)
+- Cifar Handwritten dataset : https://www.cs.toronto.edu/~kriz/cifar-10-matlab.tar.gz
+
 , then unzipped to the folder './data/'.
 
 <h2>Usage</h2>
