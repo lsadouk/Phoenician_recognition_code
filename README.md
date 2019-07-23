@@ -38,12 +38,15 @@ The main contributions of our article are:
 4. We propose a light-weight and fast transfer learning network for recognizing existing alphabets which experience a lack of annotated data (section 5 of article)
 
 <h2>Usage</h2>
+
 - CONTRIBUTION 1: Training a ConvNet on Phoenician Data to obtain the "Phoenician ConvNet"
 
 Run the code "proj_phoenician.m"
 
 >>Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData) <b>PhoenicianData</b>
+
 >>Please select among the following: (0) full target dataset / (1)limited target dataset <b>0</b>
+
 >>Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning <b>1</b>
 
 The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
@@ -53,9 +56,13 @@ The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
 Run the code "proj_phoenician.m"
 
 >>Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData)<b>TifinaghData</b>
+
 >>Please select among the following: (0) full target dataset / (1)limited target dataset <b>0</b>
+
 >>Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning <b>2</b>
+
 >>Please choose among pre-trained CNN model/net: (Phoenician)/(Latin)/(Arabic66)/(Arabic24)/(Russian)/(Devanagari)/(Bengali)/(ImageVGG)/(Digits)/(Cifar) <b>Phoenician</b>
+
 >>Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) <b>0</b>
 
 The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
@@ -65,10 +72,15 @@ The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
 Example of target dataset: Arabic24
 number of training data: 99
 
-Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData) <b>ArabicData24</b>
-Please select among the following: (0) full target dataset / (1)limited target dataset <b>1</b>
-Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning <b>2</b>
-Please choose among pre-trained CNN model/net: (Phoenician)/(Latin)/(Arabic66)/(Arabic24)/(Russian)/(Devanagari)/(Bengali)/(ImageVGG)/(Digits)/(Cifar) <b>Phoenician</b>
-Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) <b>1</b>
+>>Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData) <b>ArabicData24</b>
+
+>>Please select among the following: (0) full target dataset / (1)limited target dataset <b>1</b>
+
+>>Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning <b>2</b>
+
+>>Please choose among pre-trained CNN model/net: (Phoenician)/(Latin)/(Arabic66)/(Arabic24)/(Russian)/(Devanagari)/(Bengali)/(ImageVGG)/(Digits)/(Cifar) <b>Phoenician</b>
+
+>>Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) <b>1</b>
 
 The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
+
