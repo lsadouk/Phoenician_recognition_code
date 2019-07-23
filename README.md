@@ -90,6 +90,6 @@ First, we need the pre-trained <i>Phoenician ConvNet</i> model which can be obta
 
 >>Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) <b>1</b>
 
-The displayed result is: <b>Lowest validation error is 0.8333 at epoch 30</b>
+The displayed result is: <b>Lowest validation error is 0.878 at epoch 30</b>
 
 Resultant ConvNet models per epoch are saved in the following location: './data_results/data_TL_from_Phoenician_to_LatinData_freeze1_60-60__limitedData1/'
