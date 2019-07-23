@@ -26,52 +26,49 @@ For further information about how to compile the toolbox, please refer to the fo
 
 , then unzipped to the folder './data/'.
 
+<h2>Contributions</h2>
+The main contributions of our article are:
+
+1. We introduce a database for Phoenician handwritten characters (PHCDB) for the first time. It is freely available at :https://osf.io/4j9b6/
+
+2. We develop a deep learning recognition system for Handwritten Phoenician Character recognition which is based on Convolutional Neural Networks (ConvNets)  (section 3 of article)
+
+3. We propose a transfer learning system which uses Phoenician characters’ shapes to improve the recognition of the Handwritten Tifinagh alphabet (section 4 of article)
+
+4. We propose a light-weight and fast transfer learning network for recognizing existing alphabets which experience a lack of annotated data (section 5 of article)
+
 <h2>Usage</h2>
-In our article, we aim at:
-1. presenting a deep 
+- CONTRIBUTION 1: Training a ConvNet on Phoenician Data to obtain the "Phoenician ConvNet"
 
+Run the code "proj_phoenician.m"
 
+>>Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData) <b>PhoenicianData</b>
+>>Please select among the following: (0) full target dataset / (1)limited target dataset <b>0</b>
+>>Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning <b>1</b>
 
-I. TRAINING a ConvNet on Phoenician Data (section 3 of article) to obtain the "Phoenician ConvNet"
-Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData)PhoenicianData
-Please select among the following: (0) full target dataset / (1)limited target dataset 0
-Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning 1
+The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
 
-Lowest validation error is XX at epoch XX
+- CONTRIBUTION 2: Finetuning the whole "Phoenician ConvNet" (all weights of the convnet) using the Tifinagh dataset 
 
-II. Finetuning the whole "Phoenician ConvNet" (all weights of the convnet) using the Tifinagh dataset  (section 4 of article)
-Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData)TifinaghData
-Please select among the following: (0) full target dataset / (1)limited target dataset 0
-Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning 2
-Please choose among pre-trained CNN model/net: (Phoenician) / (Latin)/(Arabic66)/(Arabic24)/(Russian)/(Devanagari)/(Bengali)/(ImageVGG)/(Digits)/(Cifar)Phoenician
-Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) 0
+Run the code "proj_phoenician.m"
 
-III. Fine-tuning only last layer weights of the "Phoenician ConvNet" using a target dataset with limited training data (section 5 of article) to obtain the "TL ConvNet using Phoenician"
+>>Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData)<b>TifinaghData</b>
+>>Please select among the following: (0) full target dataset / (1)limited target dataset <b>0</b>
+>>Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning <b>2</b>
+>>Please choose among pre-trained CNN model/net: (Phoenician)/(Latin)/(Arabic66)/(Arabic24)/(Russian)/(Devanagari)/(Bengali)/(ImageVGG)/(Digits)/(Cifar) <b>Phoenician</b>
+>>Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) <b>0</b>
+
+The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
+
+- CONTRIBUTION 3: Fine-tuning only last layer weights of the "Phoenician ConvNet" using a target dataset with limited training data to obtain the "TL ConvNet using Phoenician" system.
 
 Example of target dataset: Arabic24
 number of training data: 99
 
-Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData)ArabicData24
-Please select among the following: (0) full target dataset / (1)limited target dataset 1
-Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning 2
-Please choose among pre-trained CNN model/net: (Phoenician) / (Latin)/(Arabic66)/(Arabic24)/(Russian)/(Devanagari)/(Bengali)/(ImageVGG)/(Digits)/(Cifar)Phoenician
-Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) 1
+Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData) <b>ArabicData24</b>
+Please select among the following: (0) full target dataset / (1)limited target dataset <b>1</b>
+Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning <b>2</b>
+Please choose among pre-trained CNN model/net: (Phoenician)/(Latin)/(Arabic66)/(Arabic24)/(Russian)/(Devanagari)/(Bengali)/(ImageVGG)/(Digits)/(Cifar) <b>Phoenician</b>
+Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) <b>1</b>
 
-
-1. You can train and test the neural network by running the file 'proj_regression.m' (<b>see examples below </b>):
-
-- using either the standard (baseline) algorithm (e.g., the standard loss function) or the cost-sensitive learning algorithm (e.g., the cost-sensitive version of the loss function) applied on ones of the following loss functions:  <b>L<sub>2</sub></b>, <b>L<sub>2</sub> &#959; &#963;</b>, <b>Mshinge</b>, <b>Mshinge<sub>2</sub></b>, <b>Mshinge<sub>3</sub></b>, <b>log &#959; &#963;</b>.
-
-- using either shallow and deep neural networks: 
-    *  shallow neural networks such as Multi-Layer Perceptrons (MLPs), by using one of the 1D datasets: (ionosphere) / ("pid" - Pima Indians Diabetes) / (WP_Breast_Cancer) / (SPECTF_Heart) / (yeast_8l) / (car) / (satimage) / (thyroid).
-    *  deep learning models such as Convolutional Neural Networks, by using one of the 2D datasets: (mnist10) / (mnist30) / (mnist40) / (mnist50).
-
-2. You can compare the standard or cost-sensitive learning algorithm to one of existent methods including: 
-- <b>undersampling method</b>: training the neural network (MLP or CNN) with the undersampling strategy,
-- <b>oversampling method</b>: training the neural network (MLP or CNN) with the oversampling strategy,
-- <b>ST1 method (Alejo et al. 2007)</b>: from the paper ["Improving the performance of the RBF neural networks trained with imbalanced samples"](https://pdfs.semanticscholar.org/483f/afc0a2901fb184a4e18d0cb57a44e3dcf893.pdf) .
-
-
-<h2>Examples for training and testing our models : </h2>
-<h3>1. Example of training and testing our cost-sensitive learning algorithm using the Mshinge<sub>2</sub> loss function</h3>
-In this example, we want to train our CNN using 
+The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
