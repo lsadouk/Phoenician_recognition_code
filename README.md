@@ -39,7 +39,7 @@ The main contributions of our article are:
 
 <h2>Usage</h2>
 
-- CONTRIBUTION 1: Training a ConvNet on Phoenician Data to obtain the "Phoenician ConvNet"
+- <b>CONTRIBUTION 1: Training a ConvNet on Phoenician Data to obtain the <i>Phoenician ConvNet</i></b>
 
 Run the code "proj_phoenician.m"
 
@@ -49,9 +49,13 @@ Run the code "proj_phoenician.m"
 
 >>Please choose: (1)Train a randomly initialized CNN / (2)Apply Transfer Learning <b>1</b>
 
-The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
+The displayed result is: <b>Lowest validation error is 0.9851 at epoch 57</b>
 
-- CONTRIBUTION 2: Finetuning the whole "Phoenician ConvNet" (all weights of the convnet) using the Tifinagh dataset 
+Resultant ConvNet models per epoch are saved in the following location: './data_results/data_PhoenicianData_60-60_limitedData0/'
+
+- <b>CONTRIBUTION 2: Finetuning the whole <i>Phoenician ConvNet</i> (all weights of the convnet) using the Tifinagh dataset </b>
+
+First, we need the pre-trained <i>Phoenician ConvNet</i> model which can be obtained by running "CONTRIBUTION 1" (the best <i>Phoenician ConvNet</i> being at epoch 57  and being available at: './data_results/data_PhoenicianData_60-60_limitedData0/net-epoch-57.mat'
 
 Run the code "proj_phoenician.m"
 
@@ -65,14 +69,18 @@ Run the code "proj_phoenician.m"
 
 >>Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) <b>0</b>
 
-The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
+The displayed result is: <b>Lowest validation error is 99.05 at epoch 35</b>
 
-- CONTRIBUTION 3: Fine-tuning only last layer weights of the "Phoenician ConvNet" using a target dataset with limited training data to obtain the "TL ConvNet using Phoenician" system.
+Resultant ConvNet models per epoch are saved in the following location: './data_results/data_TL_from_Phoenician_to_TifinaghData_freeze0_60-60__limitedData0/'
 
-Example of target dataset: Arabic24
-number of training data: 99
+-<b> CONTRIBUTION 3: Fine-tuning only last layer weights of the "Phoenician ConvNet" using a target dataset with limited training data to obtain the <i>TL ConvNet using Phoenician</i> system.</b>
 
->>Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData) <b>ArabicData24</b>
+Example of the target dataset: RussianData
+Number of training data per target dataset: n=99
+
+First, we need the pre-trained <i>Phoenician ConvNet</i> model which can be obtained by running "CONTRIBUTION 1" (the best <i>Phoenician ConvNet</i> being at epoch 57  and being available at: './data_results/data_PhoenicianData_60-60_limitedData0/net-epoch-57.mat'
+
+>>Please select among the following target datasets: (PhoenicianData)/(TifinaghData)/(LatinData)/(ArabicData24)/(RussianData)/(BengaliData)/(DigitsData)/(CifarData) <b>RussianData</b>
 
 >>Please select among the following: (0) full target dataset / (1)limited target dataset <b>1</b>
 
@@ -82,5 +90,6 @@ number of training data: 99
 
 >>Please choose: (0)Fine-tune the whole network / (1)Fine-tune only last layer (freeze others) <b>1</b>
 
-The displayed result is: <b>Lowest validation error is XX at epoch XX</b>
+The displayed result is: <b>Lowest validation error is 0.8333 at epoch 30</b>
 
+Resultant ConvNet models per epoch are saved in the following location: './data_results/data_TL_from_Phoenician_to_LatinData_freeze1_60-60__limitedData1/'
